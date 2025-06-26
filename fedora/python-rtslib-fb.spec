@@ -57,6 +57,8 @@ on system restart.
 # Build steps
 %prep
 %autosetup -n %{upstream_name}-%{version}
+# Create rtslib_fb symlink for compatibility with targetcli
+ln -sf rtslib rtslib_fb
 
 %build
 %pyproject_wheel
